@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="tr">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Esnek Bakiye Ödeme</title>
+    <link rel="stylesheet" href="styles.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <div class="app">
+      <header class="hero">
+        <div>
+          <p class="badge">App Store konumu sorunu için çözüm</p>
+          <h1>Kendi bakiyeni belirle, değerini anında al</h1>
+          <p class="subtitle">
+            Kullanıcılar ödeyecekleri tutarı ve döviz kurunu seçerek hediye kartı +
+            kredi paketine dönüştürür.
+          </p>
+        </div>
+        <div class="hero-card">
+          <h2>Ödeme Karşılığı</h2>
+          <ul>
+            <li>Seçtiğiniz tutarda dijital hediye kartı</li>
+            <li>Ekstra kullanım kredisi (bonus)</li>
+            <li>Kur sabitleme avantajı</li>
+          </ul>
+        </div>
+      </header>
+
+      <main class="grid">
+        <section class="card">
+          <h3>Ödemeyi Özelleştir</h3>
+          <form id="payment-form">
+            <label>
+              Ödeme Tutarı
+              <input id="amount" type="number" min="1" step="1" value="50" />
+            </label>
+            <label>
+              Para Birimi
+              <select id="currency">
+                <option value="TRY">TRY</option>
+                <option value="USD">USD</option>
+                <option value="EUR">EUR</option>
+              </select>
+            </label>
+            <label>
+              Döviz Kuru (TRY karşılığı)
+              <input id="rate" type="number" min="1" step="0.1" value="32.5" />
+            </label>
+            <label class="toggle">
+              <input id="bonus" type="checkbox" checked />
+              %5 bonus kredi ekle
+            </label>
+            <button type="submit">Ödemeyi Hesapla</button>
+          </form>
+        </section>
+
+        <section class="card summary">
+          <h3>Kullanıcıya Sunulan Değer</h3>
+          <div class="summary-grid">
+            <div>
+              <p class="label">Dijital Hediye Kartı</p>
+              <p id="gift" class="value">50 TRY</p>
+            </div>
+            <div>
+              <p class="label">Toplam Kredi</p>
+              <p id="credits" class="value">52.5 TRY</p>
+            </div>
+            <div>
+              <p class="label">Kur Sabitleme</p>
+              <p id="locked" class="value">32.5 TRY/USD</p>
+            </div>
+          </div>
+          <div class="callout">
+            <strong>Net değer:</strong> Kullanıcı ödeme yaptığı anda harcayabileceği
+            bir varlık kazanır; kur dalgalanmalarından korunur.
+          </div>
+        </section>
+      </main>
+
+      <section class="card steps">
+        <h3>Akış Özeti</h3>
+        <ol>
+          <li>Ödeme tutarı ve döviz kurunu seç.</li>
+          <li>Hediye kartı + bonus kredi hesaplanır.</li>
+          <li>Kredi hemen kullanılabilir, kur sabitlenir.</li>
+        </ol>
+      </section>
+    </div>
+
+    <script src="app.js"></script>
+  </body>
+</html>
